@@ -1,3 +1,15 @@
-<p>
-  index works!
-</p>
+<ngb-accordion #acc="ngbAccordion" class="index-page">
+  <ngb-panel id="toggle-1" title="Architecture">
+    <ng-template ngbPanelContent>
+      Architecture Content
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="toggle-2" title="Components & Templates">
+    <ng-template ngbPanelContent>
+      <ul>
+        <li>Displaying Data</li>
+        <li>Template Syntax</li>
+      </ul>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
