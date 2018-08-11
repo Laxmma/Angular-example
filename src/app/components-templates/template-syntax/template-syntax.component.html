@@ -1,3 +1,38 @@
-<p>
-  template-syntax works!
-</p>
+<h6>Interpolation binding</h6>
+<p>My current hero is {{currentHero.name}}</p>
+ <h3>
+    <img id="heroImg" src="{{heroImageUrl}}" style="height:50px">
+  </h3>
+   <p>The sum of 1 + 1 is {{1 + 1}}</p>
+   <p>The sum of 1 + 1 is not {{1 + 1 + getVal()}}</p>
+   <!-- Script tag will  be removed while build -->
+  <script>
+    alert('test');
+  </script>
+ <hr />
+<h6>Property binding</h6>
+<br />
+ <img [src]="heroImageUrl" style="height:50px" />
+<br /><br />
+ <button [disabled]="formNotChanged">Cancel</button>
+<br /><br />
+ <div [ngClass]="classes">[ngClass] binding to the classes property</div>
+<br /><br />
+ <app-hero-detail [hero]="currentHero"></app-hero-detail>
+ <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+ <!-- Here 'hero' property is initialised with 'currentHero' string. If we use square brackets then only template expression / property binding expression will be evaluated -->
+<app-hero-detail hero="currentHero"></app-hero-detail>
+<br />
+ <h6>Usign function call in bindings:</h6>
+<img src="{{getHeroImage()}}" style="height:50px" />
+<img [src]="getHeroImage()" style="height:50px" />
+<br /><br />
+ <h6>Script tags in property bindings:</h6>
+<p><span>"{{evilTitle}}" is the <i>interpolated</i> evil title.</span></p>
+<p>"<span [innerHTML]="evilTitle"></span>" is the <i>property bound</i> evil title.</p>
+ <hr />
+<h6><b>Attribute, class, and style bindings</b></h6>
+<br />
+ <h6>Attribute binding</h6>
+ <input type="text" id="name" value="John" placeholder="Name"/>
+<br>
