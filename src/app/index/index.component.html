@@ -6,9 +6,21 @@
   </ngb-panel>
   <ngb-panel id="toggle-2" title="Components & Templates">
     <ng-template ngbPanelContent>
-      <ul>
-        <li>Displaying Data</li>
-        <li>Template Syntax</li>
+      <ul class="index-list">
+        <li class="heading">
+          <h6>1. Displaying Data</h6>
+          <ul class="nested-list">
+            <li><a [routerLink]="['/components-templates/display-data-in-template']">Component with template</a></li>
+            <li><a [routerLink]="['/components-templates/display-data-in-template-url']">Component with template url</a></li>
+          </ul>
+        </li>
+        <li class="heading">
+            <h6>2. Template Syntax</h6>
+            <ul class="nested-list">
+              <li><a [routerLink]="['/components-templates/display-data-in-template']">Component with template</a></li>
+              <li><a [routerLink]="['/components-templates/display-data-in-template-url']">Component with template url</a></li>
+            </ul>
+          </li>
       </ul>
     </ng-template>
   </ngb-panel>

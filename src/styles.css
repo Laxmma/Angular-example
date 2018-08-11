@@ -42,3 +42,19 @@ body {
  a {
     cursor: pointer;
 }
+
+ul.index-list li.heading{
+    margin-top: 20px;
+}
+ ul.index-list li:first-child{
+    margin-top: 10px;
+}
+ ul.index-list li{
+    margin-top: 5px;
+}
+ .nested-list li::before {
+    content: "- ";
+}
+ .nested-list {
+    padding-left: 30px;
+}
