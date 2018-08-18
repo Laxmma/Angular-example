@@ -7,6 +7,8 @@ import { DisplayDataInTemplateComponent } from '../components-templates/display-
 import { DisplayDataInTemplateUrlComponent } from '../components-templates/display-data-in-template-url/display-data-in-template-url.component';
 import { TemplateSyntaxComponent } from '../components-templates/template-syntax/template-syntax.component';
 import { ObservablesDemoComponent } from '../rx-demo/observables-demo/observables-demo.component';
+import { SubjectDemoComponent } from '../rx-demo/subject-demo/subject-demo.component';
+import { OperatorsDemoComponent } from '../rx-demo/operators-demo/operators-demo.component';
 
 
 const appRoutes: Routes = [
@@ -15,6 +17,8 @@ const appRoutes: Routes = [
   { path: 'components-templates/display-data-in-template-url', component:  DisplayDataInTemplateUrlComponent},
   { path: 'components-templates/template-syntax', component:  TemplateSyntaxComponent},
   {path: 'rxjs/observables-demo', component: ObservablesDemoComponent},
+  {path: 'rxjs/subjects-demo', component: SubjectDemoComponent},
+  {path: 'rxjs/operators-demo', component: OperatorsDemoComponent},
   { path: '', redirectTo: 'index', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
