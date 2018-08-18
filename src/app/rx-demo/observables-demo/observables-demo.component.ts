@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { fromEvent } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { interval } from 'rxjs';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-observables-demo',
@@ -27,5 +30,23 @@ export class ObservablesDemoComponent implements OnInit {
       }
     );
 
+
+        /***** ajax *****/
+        let todosUrl = 'http://localhost:3000/todos';
+        const todoObservable = ajax(todosUrl);
+         todoObservable.subscribe(
+          res => console.log(res.status, res.response)
+        );
+         /***** interval *****/
+        const secondsCounterObservable = interval(1000);
+         secondsCounterObservable.subscribe(
+          n => console.log(`It's been ${n} seconds since subscribing!`)
+        );
+         /***** from array *****/
+        let numbers = [10, 20, 30, 40, 50];
+        const arrayObservable = from(numbers);
+         arrayObservable.subscribe(
+          n => console.log(n)
+        );
   }
 }
