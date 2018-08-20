@@ -10,8 +10,11 @@ import { from } from 'rxjs';
   styleUrls: ['./observables-demo.component.css']
 })
 export class ObservablesDemoComponent implements OnInit {
-
   fromEventLogs: string[] = [];
+  ajaxLogs: string[] = [];
+  intervalLogs: string[] = [];
+  fromLogs: string[] = [];
+
 
   constructor() { }
 
@@ -35,18 +38,22 @@ export class ObservablesDemoComponent implements OnInit {
         let todosUrl = 'http://localhost:3000/todos';
         const todoObservable = ajax(todosUrl);
          todoObservable.subscribe(
-          res => console.log(res.status, res.response)
-        );
+          //res => console.log(res.status, res.response)
+          res => this.ajaxLogs.push('Response came')
+                );
          /***** interval *****/
-        const secondsCounterObservable = interval(1000);
+         const secondsCounterObservable = interval(1000);
          secondsCounterObservable.subscribe(
-          n => console.log(`It's been ${n} seconds since subscribing!`)
+         // n => console.log(`It's been ${n} seconds since subscribing!`)
+          n => this.intervalLogs.push(`It's been ${n} seconds since subscribing!`)
         );
+        
          /***** from array *****/
-        let numbers = [10, 20, 30, 40, 50];
-        const arrayObservable = from(numbers);
-         arrayObservable.subscribe(
-          n => console.log(n)
-        );
+    let numbers = [10, 20, 30, 40, 50];
+    const arrayObservable = from(numbers);
+
+    arrayObservable.subscribe(
+      n => this.fromLogs.push(`${n}`)
+    );
   }
 }
